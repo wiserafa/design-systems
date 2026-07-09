@@ -1,0 +1,4 @@
+/* Luminova Labs — entry stylesheet.
+   Tokens e estilos semânticos do Labs vivem em colors_and_type.css.
+   (legacy_lum.css é só para os ui_kits/ herdados da mãe — não importar aqui.) */
+@import url('colors_and_type.css');

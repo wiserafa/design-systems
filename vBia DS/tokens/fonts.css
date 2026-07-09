@@ -1,0 +1,63 @@
+/* ============================================================
+   Luminova — Webfonts (official brand fonts)
+     • Arista Pro Alternate — geometric display (titles, headlines)
+     • Museo Sans Rounded    — rounded body + brand voice
+   Trial versions of Arista Pro were supplied; swap for licensed
+   builds before production use.
+   URLs resolve relative to this file (tokens/fonts.css).
+   ============================================================ */
+
+/* ---- Arista Pro Alternate (display) ---- */
+@font-face {
+  font-family: 'Arista Pro Alternate';
+  src: url('../assets/fonts/Arista-Pro-Alternate-ExtraLight.ttf') format('truetype');
+  font-weight: 200; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Arista Pro Alternate';
+  src: url('../assets/fonts/Arista-Pro-Alternate-Light.ttf') format('truetype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Arista Pro Alternate';
+  src: url('../assets/fonts/Arista-Pro-Alternate-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Arista Pro Alternate';
+  src: url('../assets/fonts/Arista-Pro-Alternate-Bold.ttf') format('truetype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Arista Pro Alternate';
+  src: url('../assets/fonts/Arista-Pro-Alternate-Fat.ttf') format('truetype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+
+/* ---- Museo Sans Rounded (body / rounded voice) ---- */
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('../assets/fonts/MuseoSansRounded300.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  /* Museo has no true 400 — map normal body weight to the 500 (book) cut */
+  font-family: 'Museo Sans Rounded';
+  src: url('../assets/fonts/MuseoSansRounded500.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('../assets/fonts/MuseoSansRounded500.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('../assets/fonts/MuseoSansRounded700.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('../assets/fonts/MuseoSansRounded900.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}

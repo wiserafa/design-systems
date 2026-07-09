@@ -1,0 +1,36 @@
+/* Shared card preview styles — used by every preview/*.html */
+@import url('../colors_and_type.css');
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--lum-surface);
+}
+
+.card {
+  width: 100%;
+  min-height: 100vh;
+  padding: 24px 28px;
+  background: var(--lum-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card.tight  { padding: 20px 24px; gap: 12px; }
+.card.canvas { background: var(--lum-purple-soft); }
+.card.dark   { background: var(--lum-slate); color: #fff; }
+
+/* Tiny meta label inside a card (use sparingly) */
+.meta {
+  font-family: var(--lum-font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lum-muted);
+}

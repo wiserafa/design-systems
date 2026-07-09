@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- @dsCard group="UI Kit — Vitrine (Labs)" name="Vitrine Pedagógica · kit v1" subtitle="Login · Home A/B · Feed · Detalhe · Curadoria · mobile — pele Labs" viewport="1280x900" -->
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vitrine Pedagógica · Kit Labs v1</title>
+  <link rel="icon" href="../../assets/luminova-mark.png" type="image/png">
+  <link rel="stylesheet" href="../../colors_and_type.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
+    button { font-family: inherit; }
+    a { border-bottom: none; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel" src="design-canvas.jsx"></script>
+  <script type="text/babel" src="shared.jsx"></script>
+  <script type="text/babel" src="screens-core.jsx"></script>
+  <script type="text/babel" src="screens-content.jsx"></script>
+  <script type="text/babel" src="screens-mobile-home.jsx"></script>
+  <script type="text/babel" src="screens-products.jsx"></script>
+
+  <script type="text/babel">
+    /* Artboard de componentes isolados */
+    const ComponentsBoard = () => (
+      <div style={{ width: '100%', minHeight: '100%', background: T.bg, padding: 32, display: 'flex', flexDirection: 'column', gap: 26 }}>
+        <div>
+          <span className="labs-eyebrow" style={{ marginBottom: 6 }}>componentes · kit v1</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <span style={{ fontFamily: T.mono, fontSize: 11, color: T.muted, letterSpacing: '.1em' }}>header / nav</span>
+            <div style={{ border: `1px solid ${T.border}`, borderRadius: T.radius, overflow: 'hidden' }}><Header active="Feed" /></div>
+          </div>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '360px 1fr', gap: 26, alignItems: 'start' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <span style={{ fontFamily: T.mono, fontSize: 11, color: T.muted, letterSpacing: '.1em' }}>card de prática · ativo</span>
+            <PracticeCard p={PRACTICES[4]} active />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <span style={{ fontFamily: T.mono, fontSize: 11, color: T.muted, letterSpacing: '.1em' }}>badges de estado (espelham idea · build · ship)</span>
+              <div style={{ display: 'flex', gap: 10 }}>
+                <StateBadge state="publicada" /><StateBadge state="curadoria" /><StateBadge state="destaque" />
+              </div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <span style={{ fontFamily: T.mono, fontSize: 11, color: T.muted, letterSpacing: '.1em' }}>chips de filtro</span>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                {['tudo', 'integral', 'fundamental i', 'ensino médio'].map((s, i) => <Chip key={s} label={s} active={i === 0} glow />)}
+              </div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <span style={{ fontFamily: T.mono, fontSize: 11, color: T.muted, letterSpacing: '.1em' }}>tabela densa (curadoria)</span>
+              <DenseTable rows={[
+                { id: 'PRÁT 0146', title: 'Descobrindo Fatos', author: 'Roberta Ribeiro', segment: 'integral', state: 'curadoria', likes: 3, active: true },
+                { id: 'PRÁT 0143', title: 'Leitura, Releitura e Criação Teatral.', author: 'Katia Nascimento', segment: 'fundamental i', state: 'destaque', likes: 3 },
+              ]} />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+
+    const App = () => (
+      <DesignCanvas title="Luminova Labs · kit v1 — Vitrine · Landing · Portal">
+        <DCSection id="fluxo" title="Fluxo principal" subtitle="Login e duas variações da Home — compare e escolha a direção">
+          <DCArtboard id="login" label="Login · desktop" width={1280} height={820}><ScreenLogin /></DCArtboard>
+          <DCArtboard id="login-mobile" label="Login · mobile 390" width={390} height={844}><ScreenLoginMobile /></DCArtboard>
+          <DCArtboard id="home-a" label="Home · var. A — resumo primeiro" width={1280} height={880}><ScreenHomeA /></DCArtboard>
+          <DCArtboard id="home-b" label="Home · var. B — feed integrado · aprovada" width={1280} height={1120}><ScreenHomeB /></DCArtboard>
+        </DCSection>
+        <DCSection id="fluxo-mobile" title="Home mobile — a decisão" subtitle="Mesmas variações A e B no contexto principal de uso (390)">
+          <DCArtboard id="home-a-mobile" label="Home mobile · var. A — resumo primeiro" width={390} height={844}><ScreenHomeAMobile /></DCArtboard>
+          <DCArtboard id="home-b-mobile" label="Home mobile · var. B — feed integrado · aprovada" width={390} height={844}><ScreenHomeBMobile /></DCArtboard>
+        </DCSection>
+        <DCSection id="landing" title="Landing do Labs" subtitle="Site público — manifesto, projetos com estados de squad, aplicar">
+          <DCArtboard id="landing-desktop" label="Landing · desktop" width={1280} height={2080}><ScreenLanding /></DCArtboard>
+        </DCSection>
+        <DCSection id="portal" title="Portal do aluno · conceito" subtitle="Dashboard com aulas do dia, pendentes e Tutor IA (beta)">
+          <DCArtboard id="portal-dash" label="Dashboard · desktop" width={1280} height={780}><ScreenStudentDash /></DCArtboard>
+        </DCSection>
+        <DCSection id="praticas" title="Práticas" subtitle="Feed com filtros por segmento + estado de curadoria · página de detalhe">
+          <DCArtboard id="feed" label="Feed / lista · desktop" width={1280} height={1590}><ScreenFeed /></DCArtboard>
+          <DCArtboard id="detalhe" label="Detalhe da prática" width={1280} height={980}><ScreenDetail /></DCArtboard>
+        </DCSection>
+        <DCSection id="gestao" title="Gestão" subtitle="Painel de curadoria com tabela densa e saúde do piloto">
+          <DCArtboard id="curadoria" label="Curadoria · desktop" width={1280} height={1080}><ScreenCuration /></DCArtboard>
+          <DCArtboard id="mobile" label="Feed · mobile 390" width={390} height={844}><ScreenMobile /></DCArtboard>
+        </DCSection>
+        <DCSection id="componentes" title="Componentes" subtitle="Header · card de prática · badges · chips · tabela densa">
+          <DCArtboard id="comps" label="Componentes isolados" width={1180} height={1080}><ComponentsBoard /></DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+    );
+    ReactDOM.createRoot(document.getElementById('app')).render(<App />);
+  </script>
+</body>
+</html>

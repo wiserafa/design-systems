@@ -1,0 +1,196 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "ui_kits/student-platform/**",
+              "ui_kits/vitrine-labs/**",
+              "ui_kits/website/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Museo Sans Rounded|Manrope|JetBrains Mono))/i]",
+        "message": "Font not provided by the design system. Available: Museo Sans Rounded, Manrope, JetBrains Mono."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--labs-accent",
+      "--labs-accent-deep",
+      "--labs-accent-fg",
+      "--labs-bg",
+      "--labs-border",
+      "--labs-border-strong",
+      "--labs-dur-fast",
+      "--labs-dur-normal",
+      "--labs-dur-slow",
+      "--labs-ease",
+      "--labs-elevated",
+      "--labs-error",
+      "--labs-fg",
+      "--labs-fg-muted",
+      "--labs-focus-ring",
+      "--labs-font-body",
+      "--labs-font-display",
+      "--labs-font-mono",
+      "--labs-fs-body",
+      "--labs-fs-caption",
+      "--labs-fs-display",
+      "--labs-fs-eyebrow",
+      "--labs-fs-h1",
+      "--labs-fs-h2",
+      "--labs-fs-h3",
+      "--labs-fs-h4",
+      "--labs-fs-mono",
+      "--labs-fs-small",
+      "--labs-fw-black",
+      "--labs-fw-body",
+      "--labs-fw-bold",
+      "--labs-fw-medium",
+      "--labs-fw-semibold",
+      "--labs-glow-accent",
+      "--labs-glow-purple",
+      "--labs-info",
+      "--labs-lh-body",
+      "--labs-lh-display",
+      "--labs-lh-heading",
+      "--labs-purple",
+      "--labs-purple-deep",
+      "--labs-purple-light",
+      "--labs-radius",
+      "--labs-radius-lg",
+      "--labs-radius-pill",
+      "--labs-radius-sm",
+      "--labs-shadow-card",
+      "--labs-space-1",
+      "--labs-space-2",
+      "--labs-space-3",
+      "--labs-space-4",
+      "--labs-space-5",
+      "--labs-space-6",
+      "--labs-space-7",
+      "--labs-space-8",
+      "--labs-space-9",
+      "--labs-state-build",
+      "--labs-state-build-soft",
+      "--labs-state-idea",
+      "--labs-state-idea-soft",
+      "--labs-state-ship",
+      "--labs-state-ship-soft",
+      "--labs-success",
+      "--labs-surface",
+      "--labs-warn"
+    ],
+    "tokenKinds": {
+      "--labs-bg": "color",
+      "--labs-surface": "color",
+      "--labs-elevated": "color",
+      "--labs-border": "color",
+      "--labs-border-strong": "color",
+      "--labs-fg": "color",
+      "--labs-fg-muted": "color",
+      "--labs-purple": "color",
+      "--labs-purple-light": "color",
+      "--labs-purple-deep": "color",
+      "--labs-accent": "color",
+      "--labs-accent-deep": "color",
+      "--labs-accent-fg": "color",
+      "--labs-state-idea": "color",
+      "--labs-state-idea-soft": "color",
+      "--labs-state-build": "color",
+      "--labs-state-build-soft": "color",
+      "--labs-state-ship": "color",
+      "--labs-state-ship-soft": "color",
+      "--labs-success": "color",
+      "--labs-info": "color",
+      "--labs-warn": "color",
+      "--labs-error": "color",
+      "--labs-font-display": "font",
+      "--labs-font-body": "font",
+      "--labs-font-mono": "font",
+      "--labs-fs-display": "spacing",
+      "--labs-fs-h1": "spacing",
+      "--labs-fs-h2": "spacing",
+      "--labs-fs-h3": "spacing",
+      "--labs-fs-h4": "spacing",
+      "--labs-fs-eyebrow": "spacing",
+      "--labs-fs-body": "spacing",
+      "--labs-fs-small": "spacing",
+      "--labs-fs-caption": "spacing",
+      "--labs-fs-mono": "spacing",
+      "--labs-lh-display": "other",
+      "--labs-lh-heading": "other",
+      "--labs-lh-body": "other",
+      "--labs-fw-body": "other",
+      "--labs-fw-medium": "other",
+      "--labs-fw-semibold": "other",
+      "--labs-fw-bold": "other",
+      "--labs-fw-black": "other",
+      "--labs-radius-sm": "radius",
+      "--labs-radius": "radius",
+      "--labs-radius-lg": "radius",
+      "--labs-radius-pill": "radius",
+      "--labs-space-1": "spacing",
+      "--labs-space-2": "spacing",
+      "--labs-space-3": "spacing",
+      "--labs-space-4": "spacing",
+      "--labs-space-5": "spacing",
+      "--labs-space-6": "spacing",
+      "--labs-space-7": "spacing",
+      "--labs-space-8": "spacing",
+      "--labs-space-9": "spacing",
+      "--labs-shadow-card": "shadow",
+      "--labs-glow-purple": "shadow",
+      "--labs-glow-accent": "shadow",
+      "--labs-focus-ring": "shadow",
+      "--labs-ease": "other",
+      "--labs-dur-fast": "other",
+      "--labs-dur-normal": "other",
+      "--labs-dur-slow": "other"
+    },
+    "fontFamilies": [
+      "JetBrains Mono",
+      "Manrope",
+      "Museo Sans Rounded"
+    ]
+  }
+}

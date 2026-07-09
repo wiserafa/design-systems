@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Botões" subtitle="Primário · CTA · Outline · Ghost" viewport="700x240" -->
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+.btn { font-family: var(--lum-font-body); font-weight: 600; font-size: 15px; border: none; border-radius: 12px; padding: 12px 22px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; line-height: 1; transition: all 120ms var(--lum-ease); }
+.btn-primary { background: var(--lum-purple); color: #fff; }
+.btn-cta     { background: var(--lum-gold); color: #fff; }
+.btn-outline { background: #fff; color: var(--lum-purple); border: 2px solid var(--lum-purple); }
+.btn-ghost   { background: transparent; color: var(--lum-purple); padding: 12px 14px; }
+.btn-sm      { padding: 8px 14px; font-size: 13px; border-radius: 10px; }
+.btn-dis     { opacity: .5; cursor: not-allowed; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div style="display:flex;flex-direction:column;gap:14px;justify-content:center;height:100%;">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <button class="btn btn-primary">Agendar visita</button>
+      <button class="btn btn-cta">Quero conhecer</button>
+      <button class="btn btn-outline">Saiba mais</button>
+      <button class="btn btn-ghost">Pular →</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <button class="btn btn-primary btn-sm">Salvar</button>
+      <button class="btn btn-cta btn-sm">Enviar</button>
+      <button class="btn btn-outline btn-sm">Cancelar</button>
+      <button class="btn btn-primary btn-dis">Desabilitado</button>
+    </div>
+    <div style="font-size:11px;color:var(--lum-muted);">Primário (roxo) · CTA (laranja) · Outline · Ghost</div>
+  </div>
+</div>
+</body></html>

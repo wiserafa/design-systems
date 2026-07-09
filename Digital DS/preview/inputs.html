@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Inputs" subtitle="Padrão · focus · select · erro" viewport="700x280" -->
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body>
+<div class="card">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;height:100%;align-items:center;">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="font-size:12px;font-weight:600;color:var(--lum-text);">E-mail</label>
+      <input type="email" placeholder="seu@email.com" style="font-family:var(--lum-font-body);font-size:15px;padding:12px 14px;border:1px solid var(--lum-border);border-radius:10px;outline:none;" />
+      <span style="font-size:11px;color:var(--lum-muted);">Usaremos só pra retornar seu agendamento.</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="font-size:12px;font-weight:600;color:var(--lum-text);">Segmento <span style="color:var(--lum-error);">*</span></label>
+      <select style="font-family:var(--lum-font-body);font-size:15px;padding:12px 14px;border:1px solid var(--lum-border);border-radius:10px;outline:none;background:#fff;color:var(--lum-text);">
+        <option>Fundamental 1 · Anos 1–5</option>
+      </select>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="font-size:12px;font-weight:600;color:var(--lum-text);">Senha</label>
+      <input type="text" value="seuemail@..." style="font-family:var(--lum-font-body);font-size:15px;padding:12px 14px;border:2px solid var(--lum-purple);border-radius:10px;outline:none;box-shadow:0 0 0 3px rgba(245,156,0,0.35);" />
+      <span style="font-size:11px;color:var(--lum-purple);font-weight:600;">Estado: foco com ring laranja.</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="font-size:12px;font-weight:600;color:var(--lum-text);">Telefone</label>
+      <input type="text" placeholder="(11) 99999-9999" style="font-family:var(--lum-font-body);font-size:15px;padding:12px 14px;border:1px solid var(--lum-error);border-radius:10px;outline:none;background:#FDF1EF;" />
+      <span style="font-size:11px;color:var(--lum-error);font-weight:600;">Informe um telefone válido.</span>
+    </div>
+  </div>
+</div>
+</body></html>

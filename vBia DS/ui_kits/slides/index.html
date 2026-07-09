@@ -1,0 +1,90 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Commercial deck templates" subtitle="Cover, program overview, program detail, section" -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Luminova — Slide templates</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  html,body{margin:0;height:100%;background:#0d0616;font-family:var(--font-body);overflow:hidden}
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  #frame{width:1280px;height:720px;transform-origin:center;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .nav{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;z-index:10}
+  .nav button{font-family:var(--font-display);font-weight:600;font-size:14px;border:none;border-radius:var(--radius-pill);
+    padding:9px 18px;background:rgba(255,255,255,.14);color:#fff;cursor:pointer;backdrop-filter:blur(6px)}
+  .nav button:hover{background:rgba(255,255,255,.26)}
+  .count{color:rgba(255,255,255,.8);font-family:var(--font-body);font-size:13px;min-width:52px;text-align:center}
+</style>
+</head>
+<body>
+<div id="stage"><div id="frame"></div></div>
+<div class="nav">
+  <button id="prev">‹ Anterior</button>
+  <span class="count" id="count"></span>
+  <button id="next">Próximo ›</button>
+</div>
+<script src="_shared.jsx" type="text/babel"></script>
+<script src="CoverSlide.jsx" type="text/babel"></script>
+<script src="ProgramOverviewSlide.jsx" type="text/babel"></script>
+<script src="ProgramDetailSlide.jsx" type="text/babel"></script>
+<script src="SectionSlide.jsx" type="text/babel"></script>
+<script type="text/babel" data-presets="react">
+  const { useState, useEffect } = React;
+  function Deck() {
+    const S = window;
+    const slides = [
+      () => <S.CoverSlide/>,
+      () => <S.SectionSlide title="Grupo SEB">
+        <div style={{display:'flex',flexWrap:'wrap',gap:'34px 48px',alignItems:'center',justifyContent:'center',maxWidth:900}}>
+          <img src="../../assets/logos-partners/escola-seb-plataforma-az.png" alt="Escola SEB" style={{height:56}}/>
+          <img src="../../assets/logos-partners/educacross-horizontal.svg" alt="Educacross" style={{height:52}}/>
+          <img src="../../assets/logos-partners/maplebear.png" alt="MapleBear" style={{height:64}}/>
+          <img src="../../assets/logos-partners/my-life-ayrton-senna.png" alt="My Life · Ayrton Senna" style={{height:44}}/>
+        </div>
+      </S.SectionSlide>,
+      () => <S.ProgramOverviewSlide/>,
+      () => <S.ProgramDetailSlide activeId="az" title="Plataforma AZ" photoLabel="Professora" photoTone="var(--navy-700)">
+        Com o <strong>Material AZ</strong>, você não só estuda, você acerta no caminho! Utilizado por nós e por escolas de elite em São Paulo.
+      </S.ProgramDetailSlide>,
+      () => <S.ProgramDetailSlide activeId="educacross" title="Educacross" boxColor="purple" photoLabel="Aluno" photoTone="var(--teal-600)">
+        <strong>Pedagogia + Tecnologia =</strong> excelência na alfabetização em português e matemática.
+      </S.ProgramDetailSlide>,
+      () => <S.ProgramDetailSlide activeId="financeira" boxColor="lime" titleLines={['Educação','Financeira']} photoLabel="Aluna" photoTone="var(--purple-600)">
+        <strong>Economia Comportamental + Matemática Financeira =</strong> seu filho aprende a avaliar consequências e tomar decisões conscientes.
+      </S.ProgramDetailSlide>,
+    ];
+    const [i,setI] = useState(0);
+    const go = (d) => setI(v => Math.max(0, Math.min(slides.length-1, v+d)));
+    useEffect(() => {
+      const kd = (e) => { if(e.key==='ArrowRight')go(1); if(e.key==='ArrowLeft')go(-1); };
+      window.addEventListener('keydown', kd); return () => window.removeEventListener('keydown', kd);
+    },[]);
+    useEffect(() => {
+      document.getElementById('prev').onclick = () => go(-1);
+      document.getElementById('next').onclick = () => go(1);
+    });
+    document.getElementById('count').textContent = (i+1)+' / '+slides.length;
+    return slides[i]();
+  }
+  function fit(){
+    const f=document.getElementById('frame');
+    if(!f) return;
+    const vw=window.innerWidth||document.documentElement.clientWidth;
+    const vh=window.innerHeight||document.documentElement.clientHeight;
+    let s=Math.min(vw/1280, vh/720);
+    if(!s || !isFinite(s) || s<=0) s=1;
+    f.style.transform='scale('+s+')';
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', fit);
+  requestAnimationFrame(fit);
+  if(window.ResizeObserver){ new ResizeObserver(fit).observe(document.documentElement); }
+  fit();
+  ReactDOM.createRoot(document.getElementById('frame')).render(<Deck/>);
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Commercial Cover Slide" description="Luminova enrollment cover: plum gradient, orange boxed title, photo panel, brand badge" -->
+<helmet>
+  <script src="./ds-base.js"></script>
+</helmet>
+<div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#210e30;font-family:'Museo Sans Rounded',sans-serif">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,#7d31b9 0%,#210e30 44%);opacity:.92"></div>
+  <div style="position:absolute;top:0;right:0;width:46%;height:100%;clip-path:ellipse(120% 100% at 78% 50%);background:linear-gradient(150deg,#7d31b9,#210e30);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-family:'Arista Pro Alternate',sans-serif;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:14px">Foto da aluna</div>
+  <div style="position:absolute;left:64px;top:118px;right:52%">
+    <span style="display: inline-flex; align-items: center; background: #fa9d1c; color: #fff; font-family: Museo Sans Rounded; font-weight: 600; font-size: 15px; padding: 8px 16px; border-radius: 999px">Matrículas 2027</span>
+    <div style="margin-top:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+      <span style="display:table;background:#fa9d1c;color:#fff;font-family:'Arista Pro Alternate',sans-serif;font-weight:700;font-size:76px;line-height:1.02;padding:.08em .22em;border-radius:2px">Luminova</span>
+      <span style="display:table;background:#fa9d1c;color:#fff;font-family:'Arista Pro Alternate',sans-serif;font-weight:700;font-size:76px;line-height:1.02;padding:.08em .22em;border-radius:2px">Experience</span>
+    </div>
+    <p style="color:#fff;font-size:24px;line-height:1.45;margin:34px 0 0;max-width:15ch">Na Luminova, aprender é descobrir o mundo todos os dias.</p>
+  </div>
+  <div style="position:absolute;right:40px;bottom:34px;display:inline-flex;background:#fff;border-radius:20px;padding:14px 20px;box-shadow:0 6px 18px rgba(33,14,48,.14)">
+    <x-import component-from-global-scope="LuminovaDesignSystem_3d6f8c.Logo" height="54" hint-size="200px,54px"></x-import>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

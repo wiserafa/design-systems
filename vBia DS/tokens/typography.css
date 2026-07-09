@@ -1,0 +1,41 @@
+/* ============================================================
+   Luminova — Typography tokens
+   ============================================================ */
+:root {
+  /* Families */
+  --font-display: 'Arista Pro Alternate', 'Poppins', system-ui, sans-serif;   /* titles, headlines & logo ONLY */
+  --font-rounded: 'Museo Sans Rounded', 'Fredoka', sans-serif;                 /* rounded brand accents */
+  --font-body: 'Museo Sans Rounded', 'Open Sans', system-ui, sans-serif;       /* body copy */
+  --font-numeric: 'Museo Sans Rounded', 'Open Sans', system-ui, sans-serif;    /* ALL numbers — years, counts, stats, prices */
+
+  /* Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* Type scale (deck-scale, 16:9 canvas ~1280px wide) */
+  --text-display: 84px;   /* cover hero ("Luminova Experience") */
+  --text-h1: 60px;        /* program titles ("Educacross") */
+  --text-h2: 40px;        /* section titles ("Grupo SEB") */
+  --text-h3: 30px;
+  --text-title: 24px;
+  --text-lead: 22px;      /* intro / lead paragraphs */
+  --text-body-lg: 20px;
+  --text-body: 17px;
+  --text-small: 14px;
+  --text-caption: 12px;
+  --text-label: 11px;     /* "ESCOLA" style caps labels */
+
+  /* Line heights */
+  --leading-tight: 1.05;
+  --leading-snug: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* Letter spacing */
+  --tracking-label: 0.14em;  /* uppercase labels */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+}

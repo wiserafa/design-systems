@@ -1,0 +1,40 @@
+/* Shared card preview styles — used by every preview/*.html (Labs dark-first) */
+@import url('../colors_and_type.css');
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--labs-bg);
+}
+
+.card {
+  width: 100%;
+  min-height: 100vh;
+  padding: 24px 28px;
+  background: var(--labs-bg);
+  color: var(--labs-fg);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card.tight   { padding: 20px 24px; gap: 12px; }
+.card.surface { background: var(--labs-surface); }
+
+/* Tiny meta label inside a card (use sparingly) */
+.meta {
+  font-family: var(--labs-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--labs-fg-muted);
+}
+
+/* Swatch helpers */
+.sw-name { font-family: var(--labs-font-body); font-size: 12px; font-weight: 600; color: var(--labs-fg); }
+.sw-val  { font-family: var(--labs-font-mono); font-size: 10.5px; color: var(--labs-fg-muted); }

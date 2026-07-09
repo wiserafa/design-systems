@@ -1,0 +1,432 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Specimen · Labs v1" subtitle="Visão geral viva — hero, paleta, glow, type, componentes" viewport="1080x900" -->
+<html lang="pt-BR">
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0; }
+  body { padding: 0.5in; box-sizing: border-box; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, li, tr { break-inside: avoid; }
+  section, article, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luminova Labs — Design System v1</title>
+<link rel="icon" href="../assets/luminova-mark.png" type="image/png">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { padding: 0 0 80px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+section { padding: 56px 0; border-bottom: 1px solid var(--labs-border); }
+h2.sec {
+  font-family: var(--labs-font-display); font-weight: 900; font-size: 13px;
+  text-transform: uppercase; letter-spacing: .14em; color: var(--labs-fg-muted); margin-bottom: 28px;
+}
+
+/* HERO */
+.hero { position: relative; padding: 90px 0 80px; overflow: hidden; border-bottom: 1px solid var(--labs-border); }
+.hero::before {
+  content: ""; position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+  width: 620px; height: 420px; border-radius: 50%;
+  background: radial-gradient(closest-side, oklch(58% .18 305 / .35), transparent);
+  filter: blur(30px); z-index: 0;
+}
+.hero .wrap { position: relative; z-index: 1; }
+.brandline { font-family: var(--labs-font-display); font-weight: 700; font-size: 20px; letter-spacing: .01em; margin-bottom: 54px; }
+.brandline .lum { color: var(--labs-purple-light); }
+.brandline .sep { color: var(--labs-fg-muted); margin: 0 4px; }
+.brandline .labs { color: var(--labs-accent); }
+.hero h1 {
+  font-family: var(--labs-font-display); font-weight: 900;
+  font-size: clamp(40px, 6vw, 68px); line-height: var(--labs-lh-display);
+  letter-spacing: -.02em; max-width: 780px; margin-bottom: 22px; color: var(--labs-fg);
+}
+.hero p.lead { font-size: 19px; color: var(--labs-fg-muted); max-width: 540px; margin-bottom: 34px; }
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* BUTTONS */
+.btn {
+  font-family: var(--labs-font-display); font-weight: 700; font-size: 15px; border: 0; cursor: pointer;
+  padding: 14px 26px; border-radius: var(--labs-radius-pill);
+  transition: box-shadow var(--labs-dur-normal) var(--labs-ease), transform var(--labs-dur-fast) var(--labs-ease);
+  text-decoration: none; display: inline-block;
+}
+.btn-primary { background: var(--labs-accent); color: var(--labs-accent-fg); }
+.btn-primary:hover { box-shadow: var(--labs-glow-accent); transform: translateY(-1px); }
+.btn-primary:active { background: var(--labs-accent-deep); transform: translateY(1px); }
+.btn-purple { background: var(--labs-purple); color: #fff; }
+.btn-purple:hover { box-shadow: var(--labs-glow-purple); transform: translateY(-1px); }
+.btn-purple:active { background: var(--labs-purple-deep); transform: translateY(1px); }
+.btn-ghost { background: transparent; color: var(--labs-fg); border: 1px solid var(--labs-border-strong); }
+.btn-ghost:hover { border-color: var(--labs-purple-light); color: var(--labs-purple-light); }
+.btn:focus-visible { outline: none; box-shadow: var(--labs-focus-ring); }
+
+/* SWATCHES */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.sw { border-radius: var(--labs-radius); overflow: hidden; border: 1px solid var(--labs-border); background: var(--labs-surface); }
+.sw .chip { height: 78px; }
+.sw .meta { padding: 10px 12px; font-family: var(--labs-font-mono); font-size: 11px; line-height: 1.5; }
+.sw .name { color: var(--labs-fg); font-weight: 500; }
+.sw .val { color: var(--labs-fg-muted); }
+
+/* TYPE SPECIMEN */
+.spec { display: grid; gap: 18px; }
+.spec .row { display: flex; align-items: baseline; gap: 20px; border-bottom: 1px dashed var(--labs-border); padding-bottom: 16px; }
+.spec .tag { font-family: var(--labs-font-mono); font-size: 11px; color: var(--labs-fg-muted); width: 130px; flex-shrink: 0; text-transform: uppercase; letter-spacing: .08em; }
+.d-hero { font-family: var(--labs-font-display); font-weight: 900; font-size: 46px; letter-spacing: -.02em; line-height: 1; color: var(--labs-fg); }
+.d-h2 { font-family: var(--labs-font-display); font-weight: 700; font-size: 30px; color: var(--labs-purple-light); }
+.d-lead { font-family: var(--labs-font-body); font-weight: 500; font-size: 19px; }
+.d-body { font-family: var(--labs-font-body); font-size: 15px; color: var(--labs-fg-muted); }
+.d-mono { font-family: var(--labs-font-mono); font-size: 14px; color: var(--labs-accent); }
+
+/* CARDS / BADGES */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+.card {
+  background: var(--labs-surface); border: 1px solid var(--labs-border); border-radius: var(--labs-radius-lg);
+  padding: 24px; box-shadow: var(--labs-shadow-card);
+  transition: box-shadow var(--labs-dur-normal) var(--labs-ease), border-color var(--labs-dur-normal) var(--labs-ease), transform var(--labs-dur-fast) var(--labs-ease);
+}
+.card:hover { border-color: var(--labs-purple); box-shadow: var(--labs-glow-purple); transform: translateY(-2px); }
+.card .idx { font-family: var(--labs-font-mono); font-size: 12px; color: var(--labs-accent); font-weight: 500; margin-bottom: 14px; }
+.card h3 { font-family: var(--labs-font-display); font-weight: 700; font-size: 20px; margin-bottom: 8px; color: var(--labs-fg); }
+.card p { font-size: 14px; color: var(--labs-fg-muted); margin: 0; }
+.badge {
+  display: inline-block; font-family: var(--labs-font-mono); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .1em; padding: 5px 12px; border-radius: var(--labs-radius-pill);
+}
+.badge-ship { background: var(--labs-accent); color: var(--labs-accent-fg); }
+.badge-build { background: var(--labs-state-build-soft); color: var(--labs-purple-light); border: 1px solid var(--labs-purple); }
+.badge-idea { background: transparent; color: var(--labs-fg-muted); border: 1px solid var(--labs-border-strong); }
+.note { font-family: var(--labs-font-mono); font-size: 12px; color: var(--labs-fg-muted); margin-top: 18px; line-height: 1.7; }
+.pill-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero" data-screen-label="Hero">
+  <div class="wrap">
+    <div class="brandline"><span class="lum">luminova</span><span class="sep">/</span><span class="labs">labs</span><span class="labs">.</span></div>
+    <span class="labs-eyebrow">Design system · v1 · extensão rebelde</span>
+    <h1>Onde a curiosidade <span class="labs-hl">vira projeto.</span></h1>
+    <p class="lead">A mesma alma da Luminova — roxo, laranja, curvas, Museo. Mas no escuro, com glow, e numerais de laboratório. O filho ousado.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#componentes">Aplicar para o Labs</a>
+      <a class="btn btn-ghost" href="#cor">Ler manifesto completo</a>
+    </div>
+  </div>
+</div>
+
+<!-- PALETA -->
+<section id="cor" data-screen-label="Cor">
+  <div class="wrap">
+    <span class="labs-eyebrow">01 · Cor</span>
+    <h2 class="sec">Paleta — herda os hues da mãe, vive no escuro</h2>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:var(--labs-bg);"></div><div class="meta"><div class="name">bg</div><div class="val">oklch 14% · canvas</div></div></div>
+      <div class="sw"><div class="chip" style="background:var(--labs-surface);"></div><div class="meta"><div class="name">surface</div><div class="val">oklch 18% · card</div></div></div>
+      <div class="sw"><div class="chip" style="background:var(--labs-elevated);"></div><div class="meta"><div class="name">elevated</div><div class="val">oklch 22%</div></div></div>
+      <div class="sw"><div class="chip" style="background:var(--labs-purple);"></div><div class="meta"><div class="name">purple</div><div class="val">hue 305 · herdado</div></div></div>
+      <div class="sw"><div class="chip" style="background:var(--labs-purple-light);"></div><div class="meta"><div class="name">purple-light</div><div class="val">hover / hero</div></div></div>
+      <div class="sw"><div class="chip" style="background:var(--labs-accent);"></div><div class="meta"><div class="name">accent</div><div class="val">hue 60 · laranja</div></div></div>
+      <div class="sw"><div class="chip" style="background:var(--labs-fg);"></div><div class="meta"><div class="name">fg</div><div class="val">warm white</div></div></div>
+      <div class="sw"><div class="chip" style="background:var(--labs-fg-muted);"></div><div class="meta"><div class="name">fg-muted</div><div class="val">secundário</div></div></div>
+    </div>
+    <p class="note">Os hues são os mesmos da mãe (roxo 305 / laranja 60). O que muda: lightness sobe pra brilhar no escuro, e a superfície padrão é grafite-índigo, não off-white.</p>
+  </div>
+</section>
+
+<!-- GLOW -->
+<section data-screen-label="Glow">
+  <div class="wrap">
+    <span class="labs-eyebrow">02 · Assinatura</span>
+    <h2 class="sec">Glow — o que a mãe proíbe, o Labs assina</h2>
+    <div class="cards">
+      <div class="card" style="box-shadow:var(--labs-glow-purple);border-color:var(--labs-purple);">
+        <div class="idx">glow · roxo</div><h3>Halo de presença</h3>
+        <p>0 0 60px / 25%. Usado em hero, card ativo, CTA em foco. É a marca de que isto é o Labs, não a mãe.</p>
+      </div>
+      <div class="card" style="box-shadow:var(--labs-glow-accent);border-color:var(--labs-accent);">
+        <div class="idx">glow · laranja</div><h3>Halo de ação</h3>
+        <p>0 0 48px / 22%. Hover de CTA primário, badge "ship". Calor, não neon.</p>
+      </div>
+      <div class="card">
+        <div class="idx">sombra · sutil</div><h3>Card padrão</h3>
+        <p>Sombra discreta no repouso; o glow só acende no hover/ativo. Sem cyberpunk — presença, não ruído.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOGRAFIA -->
+<section data-screen-label="Tipografia">
+  <div class="wrap">
+    <span class="labs-eyebrow">03 · Tipografia</span>
+    <h2 class="sec">Museo + Manrope herdadas · JetBrains Mono é o sotaque</h2>
+    <div class="spec">
+      <div class="row"><span class="tag">display · 900</span><span class="d-hero">Aprender criando.</span></div>
+      <div class="row"><span class="tag">display · 700 roxo</span><span class="d-h2">Construir o futuro.</span></div>
+      <div class="row"><span class="tag">body · 500 lead</span><span class="d-lead">Tecnologia não é fim. É ferramenta de autoria.</span></div>
+      <div class="row"><span class="tag">body · 400</span><span class="d-body">No Luminova Labs, alunos e educadores constroem soluções reais para a própria escola, em ciclos curtos.</span></div>
+      <div class="row"><span class="tag">mono · labs</span><span class="d-mono">PROJETO 001 · build → test → ship · v0.3</span></div>
+    </div>
+    <p class="note">O Mono é a linguagem interna: numerais de etapa (01·Criar), IDs de projeto, estados técnicos. Nunca em texto pra fora.</p>
+  </div>
+</section>
+
+<!-- COMPONENTES -->
+<section id="componentes" data-screen-label="Componentes">
+  <div class="wrap">
+    <span class="labs-eyebrow">04 · Componentes</span>
+    <h2 class="sec">Botões, badges de estado, card de projeto</h2>
+    <div class="cta-row" style="margin-bottom:30px;">
+      <button class="btn btn-primary">Botão primário</button>
+      <button class="btn btn-purple">Botão roxo</button>
+      <button class="btn btn-ghost">Ghost</button>
+    </div>
+    <div class="pill-row" style="margin-bottom:34px;">
+      <span class="badge badge-idea">idea</span>
+      <span class="badge badge-build">build</span>
+      <span class="badge badge-build">test</span>
+      <span class="badge badge-ship">ship</span>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="idx">PROJETO 001</div>
+        <h3>Vitrine Pedagógica</h3>
+        <p>Registro institucional de práticas. Primeiro produto sob a marca Labs.</p>
+        <div class="pill-row" style="margin-top:16px;"><span class="badge badge-ship">ship</span></div>
+      </div>
+      <div class="card">
+        <div class="idx">PROJETO 002</div>
+        <h3>Makerthon Luminova v1</h3>
+        <p>Squad ataca problema real com dono interno. Build → test → improve.</p>
+        <div class="pill-row" style="margin-top:16px;"><span class="badge badge-build">build</span></div>
+      </div>
+      <div class="card">
+        <div class="idx">PROJETO 003</div>
+        <h3>Portal do aluno</h3>
+        <p>Ferramenta de aprendizagem assistida por IA. Ainda conceito.</p>
+        <div class="pill-row" style="margin-top:16px;"><span class="badge badge-idea">idea</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="border-bottom:0;" data-screen-label="Manifesto">
+  <div class="wrap" style="text-align:center;padding:30px 0;">
+    <span class="labs-eyebrow" style="display:inline-block;">Manifesto · v1</span>
+    <div class="d-hero" style="font-size:clamp(34px,5vw,52px);margin:10px 0 26px;">Aprender criando.<br><span class="labs-hl">Construir o futuro.</span></div>
+    <a class="btn btn-primary" href="#componentes">Inscreva-se</a>
+  </div>
+</section>
+
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "specimen";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  @page { margin: 0.5cm; }\n  section, article, figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks, whose
+  // slides are sized to the page.
+  try {
+    if (!document.querySelector('deck-stage')) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a body padding inset only when we also zero the
+      // @page margin; computed style can't tell us (it reports screen media),
+      // so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /body\s*\{[^}]*padding/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

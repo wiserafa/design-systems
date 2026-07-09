@@ -1,0 +1,44 @@
+/* ============================================================
+   Luminova — Spacing, radius, shadow, layout tokens
+   ============================================================ */
+:root {
+  /* Spacing scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Radius — the brand leans very rounded (pill logo circle, rounded wordmark) */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* Shadows — soft, warm, minimal */
+  --shadow-sm: 0 1px 3px rgba(33, 14, 48, 0.10);
+  --shadow-md: 0 6px 18px rgba(33, 14, 48, 0.14);
+  --shadow-lg: 0 16px 40px rgba(33, 14, 48, 0.20);
+  --shadow-brand: 0 10px 30px rgba(100, 45, 144, 0.28);
+
+  /* Borders */
+  --border-width: 1px;
+  --rule-width: 4px; /* the vertical accent rule before body blocks */
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 140ms; /* @kind other */
+  --dur-base: 240ms; /* @kind other */
+  --dur-slow: 400ms; /* @kind other */
+
+  /* Deck canvas */
+  --slide-w: 1280px;
+  --slide-h: 720px;
+}

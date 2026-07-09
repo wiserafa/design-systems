@@ -1,0 +1,27 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Logo sobre o escuro" subtitle="Regra Labs: marca da mãe sempre em pílula branca" viewport="700x260" -->
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body>
+<div class="card">
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;flex:1;">
+    <!-- brandline on dark — preferred -->
+    <div style="background:var(--labs-bg);border:1px solid var(--labs-border);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:18px;">
+      <div style="font-family:var(--labs-font-display);font-weight:700;font-size:18px;"><span style="color:var(--labs-purple-light);">luminova</span><span style="color:var(--labs-fg-muted);margin:0 3px;">/</span><span style="color:var(--labs-accent);">labs.</span></div>
+      <div class="meta" style="color:var(--labs-success);">preferido</div>
+    </div>
+    <!-- mother logo in white pill on dark — ok -->
+    <div style="background:var(--labs-surface);border:1px solid var(--labs-border);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:18px;">
+      <div style="background:#fff;border-radius:999px;padding:9px 16px;">
+        <img src="../assets/luminova-horizontal.svg" alt="" style="height:26px;display:block;">
+      </div>
+      <div class="meta">co-brand · pílula branca</div>
+    </div>
+    <!-- mother logo raw on dark — avoid -->
+    <div style="background:var(--labs-bg);border:1px solid var(--labs-border);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:18px;position:relative;overflow:hidden;">
+      <img src="../assets/luminova-horizontal.svg" alt="" style="height:34px;opacity:.6;">
+      <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg, rgba(255,255,255,0) 0 14px, rgba(255,255,255,0.10) 14px 16px);pointer-events:none;"></div>
+      <div class="meta" style="color:var(--labs-error);position:relative;">evitar · roxo some no escuro</div>
+    </div>
+  </div>
+</div>
+</body></html>

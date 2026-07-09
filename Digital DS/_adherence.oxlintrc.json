@@ -1,0 +1,196 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "ui_kits/student-platform/**",
+              "ui_kits/website/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Museo Sans Rounded|Manrope))/i]",
+        "message": "Font not provided by the design system. Available: Museo Sans Rounded, Manrope."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--lum-bg",
+      "--lum-border",
+      "--lum-dur-fast",
+      "--lum-dur-normal",
+      "--lum-dur-slow",
+      "--lum-ease",
+      "--lum-error",
+      "--lum-focus-ring",
+      "--lum-font-body",
+      "--lum-font-display",
+      "--lum-fs-body",
+      "--lum-fs-caption",
+      "--lum-fs-display",
+      "--lum-fs-eyebrow",
+      "--lum-fs-h1",
+      "--lum-fs-h2",
+      "--lum-fs-h3",
+      "--lum-fs-h4",
+      "--lum-fs-small",
+      "--lum-fw-black",
+      "--lum-fw-body",
+      "--lum-fw-bold",
+      "--lum-fw-medium",
+      "--lum-fw-semibold",
+      "--lum-gold",
+      "--lum-gold-deep",
+      "--lum-gold-soft",
+      "--lum-info",
+      "--lum-lh-body",
+      "--lum-lh-display",
+      "--lum-lh-heading",
+      "--lum-muted",
+      "--lum-purple",
+      "--lum-purple-deep",
+      "--lum-purple-light",
+      "--lum-purple-soft",
+      "--lum-radius-lg",
+      "--lum-radius-md",
+      "--lum-radius-pill",
+      "--lum-radius-sm",
+      "--lum-radius-xl",
+      "--lum-seg-fund1",
+      "--lum-seg-fund1-soft",
+      "--lum-seg-fund2",
+      "--lum-seg-fund2-soft",
+      "--lum-seg-medio",
+      "--lum-seg-medio-soft",
+      "--lum-seg-prof",
+      "--lum-seg-prof-soft",
+      "--lum-shadow-lg",
+      "--lum-shadow-md",
+      "--lum-shadow-sm",
+      "--lum-slate",
+      "--lum-space-1",
+      "--lum-space-2",
+      "--lum-space-3",
+      "--lum-space-4",
+      "--lum-space-5",
+      "--lum-space-6",
+      "--lum-space-7",
+      "--lum-space-8",
+      "--lum-space-9",
+      "--lum-success",
+      "--lum-surface",
+      "--lum-text",
+      "--lum-warn"
+    ],
+    "tokenKinds": {
+      "--lum-purple": "color",
+      "--lum-purple-light": "color",
+      "--lum-purple-soft": "color",
+      "--lum-purple-deep": "color",
+      "--lum-gold": "color",
+      "--lum-gold-soft": "color",
+      "--lum-gold-deep": "color",
+      "--lum-slate": "color",
+      "--lum-text": "font",
+      "--lum-muted": "color",
+      "--lum-border": "color",
+      "--lum-surface": "color",
+      "--lum-bg": "color",
+      "--lum-seg-fund1": "color",
+      "--lum-seg-fund1-soft": "color",
+      "--lum-seg-fund2": "color",
+      "--lum-seg-fund2-soft": "color",
+      "--lum-seg-medio": "color",
+      "--lum-seg-medio-soft": "color",
+      "--lum-seg-prof": "color",
+      "--lum-seg-prof-soft": "color",
+      "--lum-success": "color",
+      "--lum-info": "color",
+      "--lum-warn": "color",
+      "--lum-error": "color",
+      "--lum-font-display": "font",
+      "--lum-font-body": "font",
+      "--lum-fs-display": "spacing",
+      "--lum-fs-h1": "spacing",
+      "--lum-fs-h2": "spacing",
+      "--lum-fs-h3": "spacing",
+      "--lum-fs-h4": "spacing",
+      "--lum-fs-eyebrow": "spacing",
+      "--lum-fs-body": "spacing",
+      "--lum-fs-small": "spacing",
+      "--lum-fs-caption": "spacing",
+      "--lum-lh-display": "other",
+      "--lum-lh-heading": "other",
+      "--lum-lh-body": "other",
+      "--lum-fw-body": "other",
+      "--lum-fw-medium": "other",
+      "--lum-fw-semibold": "other",
+      "--lum-fw-bold": "other",
+      "--lum-fw-black": "other",
+      "--lum-radius-sm": "radius",
+      "--lum-radius-md": "radius",
+      "--lum-radius-lg": "radius",
+      "--lum-radius-xl": "radius",
+      "--lum-radius-pill": "radius",
+      "--lum-space-1": "spacing",
+      "--lum-space-2": "spacing",
+      "--lum-space-3": "spacing",
+      "--lum-space-4": "spacing",
+      "--lum-space-5": "spacing",
+      "--lum-space-6": "spacing",
+      "--lum-space-7": "spacing",
+      "--lum-space-8": "spacing",
+      "--lum-space-9": "spacing",
+      "--lum-shadow-sm": "shadow",
+      "--lum-shadow-md": "shadow",
+      "--lum-shadow-lg": "shadow",
+      "--lum-focus-ring": "shadow",
+      "--lum-ease": "other",
+      "--lum-dur-fast": "other",
+      "--lum-dur-normal": "other",
+      "--lum-dur-slow": "other"
+    },
+    "fontFamilies": [
+      "Manrope",
+      "Museo Sans Rounded"
+    ]
+  }
+}

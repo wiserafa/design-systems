@@ -1,0 +1,67 @@
+/* ============================================================
+   Luminova — Color tokens
+   Sampled directly from the brand logo and commercial deck.
+   ============================================================ */
+:root {
+  /* ---- Brand core ---- */
+  --orange-500: #fa9d1c; /* logo circle, primary highlight */
+  --orange-400: #ffb347;
+  --orange-600: #e2870b;
+  --yellow-500: #fcbc00; /* secondary warm accent */
+  --yellow-400: #ffd23f;
+
+  --purple-700: #642d90; /* wordmark purple — primary brand color */
+  --purple-600: #7d31b9; /* lighter purple used in gradients */
+  --purple-800: #4a1f6e;
+
+  --plum-900: #210e30; /* darkest brand background */
+  --plum-800: #2d1440;
+
+  /* ---- Program / expanded accents ---- */
+  --lime-500: #99cc34;
+  --navy-700: #013366;
+  --teal-600: #028169;
+
+  /* ---- Neutrals ---- */
+  --white: #ffffff;
+  --grey-050: #f4f2f6;
+  --grey-100: #e9e6ee;
+  --grey-200: #d5d0dc;
+  --grey-400: #9a94a3;
+  --grey-500: #6a6a6a; /* "ESCOLA" label grey */
+  --grey-700: #3f3a47;
+  --black: #111015;
+
+  /* ---- Semantic aliases ---- */
+  --brand-primary: var(--purple-700);
+  --brand-secondary: var(--orange-500);
+  --brand-accent: var(--yellow-500);
+
+  --bg-page: var(--white);
+  --bg-inverse: var(--plum-900);
+  --surface-card: var(--white);
+  --surface-muted: var(--grey-050);
+
+  --text-body: var(--grey-700);
+  --text-heading: var(--plum-900);
+  --text-inverse: var(--white);
+  --text-muted: var(--grey-500);
+  --text-on-brand: var(--white);
+
+  --border-subtle: var(--grey-100);
+  --border-strong: var(--grey-200);
+
+  --highlight-fill: var(--orange-500);
+  --highlight-text: var(--white);
+
+  --gradient-brand: linear-gradient(135deg, var(--purple-600) 0%, var(--plum-900) 70%);
+
+  /* ---- Program color roles (from the seven side-rail columns) ---- */
+  --program-az: var(--yellow-500);
+  --program-macmillan: var(--orange-500);
+  --program-educacross: var(--purple-700);
+  --program-financeira: var(--lime-500);
+  --program-regua: var(--plum-900);
+  --program-ciencias: var(--navy-700);
+  --program-projetos: var(--teal-600);
+}

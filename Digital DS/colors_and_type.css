@@ -1,0 +1,187 @@
+/* =============================================================
+   Luminova Digital — Colors & Typography Tokens
+   Sistema de design 100% digital para Escola Luminova Interlagos
+   ============================================================= */
+
+/* Fonts — Display: Museo Sans Rounded (brand); Body: Manrope (Google Fonts)
+   Arista Pro files exist in fonts/ but are LOGO CONSTRUCTION ONLY — do not use in UI.
+   Files are -trial.ttf (no commercial license).                                       */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+/* ---------- Museo Sans Rounded (display — brand) ---------- */
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded100.otf') format('opentype');
+  font-weight: 100; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded300.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded500.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded700.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded900.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded1000.otf') format('opentype');
+  font-weight: 1000; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* ---------- PRIMARY PALETTE ---------- */
+  --lum-purple:        #652D91;  /* primary */
+  --lum-purple-light:  #9E54BD;  /* highlight / secondary purple */
+  --lum-purple-soft:   #F3EFF7;  /* background tint */
+  --lum-purple-deep:   #4A1F6B;  /* hover / pressed primary */
+
+  --lum-gold:          #F59C00;  /* accent / CTA */
+  --lum-gold-soft:     #FDE9C7;  /* gold tint background */
+  --lum-gold-deep:     #C97D00;  /* hover / pressed gold */
+
+  --lum-slate:         #2A3740;  /* deep neutral / dark surface */
+  --lum-text:          #1E1E1E;  /* default body text */
+  --lum-muted:         #706F6F;  /* secondary text / metadata */
+  --lum-border:        #E5E1EB;  /* hairline divider */
+  --lum-surface:       #FFFFFF;  /* default card / surface */
+  --lum-bg:            #FAFAFB;  /* canvas background */
+
+  /* ---------- SEGMENT COLORS (digital school segments) ---------- */
+  --lum-seg-fund1:     #02A9B9;  /* Fundamental 1 — anos 1–5  (turquesa) */
+  --lum-seg-fund1-soft:#E1F5F7;
+  --lum-seg-fund2:     #FF9933;  /* Fundamental 2 — anos 6–9  (laranja) */
+  --lum-seg-fund2-soft:#FFF1E0;
+  --lum-seg-medio:     #662483;  /* Ensino Médio  — anos 10–12 (roxo) */
+  --lum-seg-medio-soft:#F1EBF4;
+  --lum-seg-prof:      #003366;  /* Professores              (navy) */
+  --lum-seg-prof-soft: #E2E8EF;
+
+  /* ---------- SEMANTIC ---------- */
+  --lum-success:       #1F9D55;
+  --lum-info:          #2A6FDB;
+  --lum-warn:          #E0A200;
+  --lum-error:         #C0392B;
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --lum-font-display: 'Museo Sans Rounded', system-ui, sans-serif; /* brand display — títulos, eyebrows, botões, labels */
+  --lum-font-body:    'Manrope', system-ui, -apple-system, sans-serif; /* corpo, dados, legendas */
+
+  /* Type scale (px) — desktop */
+  --lum-fs-display: 64px;
+  --lum-fs-h1:      48px;
+  --lum-fs-h2:      36px;
+  --lum-fs-h3:      28px;
+  --lum-fs-h4:      22px;
+  --lum-fs-eyebrow: 14px;
+  --lum-fs-body:    16px;
+  --lum-fs-small:   14px;
+  --lum-fs-caption: 12px;
+
+  /* Line heights */
+  --lum-lh-display: 1.05;
+  --lum-lh-heading: 1.15;
+  --lum-lh-body:    1.55;
+
+  /* Weights */
+  --lum-fw-body:    400;
+  --lum-fw-medium:  500;
+  --lum-fw-semibold:600;
+  --lum-fw-bold:    700;
+  --lum-fw-black:   800;
+
+  /* ---------- RADII (flat, generous rounding) ---------- */
+  --lum-radius-sm:  6px;
+  --lum-radius-md:  12px;
+  --lum-radius-lg:  18px;
+  --lum-radius-xl:  24px;
+  --lum-radius-pill: 999px;
+
+  /* ---------- SPACING (8px base) ---------- */
+  --lum-space-1:  4px;
+  --lum-space-2:  8px;
+  --lum-space-3:  12px;
+  --lum-space-4:  16px;
+  --lum-space-5:  24px;
+  --lum-space-6:  32px;
+  --lum-space-7:  48px;
+  --lum-space-8:  64px;
+  --lum-space-9:  96px;
+
+  /* ---------- ELEVATION (flat — use sparingly) ---------- */
+  --lum-shadow-sm: 0 1px 2px rgba(30, 30, 30, 0.06);
+  --lum-shadow-md: 0 4px 12px rgba(101, 45, 145, 0.08);
+  --lum-shadow-lg: 0 10px 28px rgba(101, 45, 145, 0.12);
+  --lum-focus-ring: 0 0 0 3px rgba(245, 156, 0, 0.35);
+
+  /* ---------- MOTION ---------- */
+  --lum-ease:        cubic-bezier(.2, .8, .2, 1);
+  --lum-dur-fast:    120ms;
+  --lum-dur-normal:  220ms;
+  --lum-dur-slow:    360ms;
+}
+
+/* =============================================================
+   SEMANTIC ELEMENT STYLES
+   ============================================================= */
+
+html, body {
+  font-family: var(--lum-font-body);
+  font-size: var(--lum-fs-body);
+  line-height: var(--lum-lh-body);
+  color: var(--lum-text);
+  background: var(--lum-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .lum-display {
+  font-family: var(--lum-font-display);
+  font-weight: var(--lum-fw-bold);
+  color: var(--lum-purple);
+  line-height: var(--lum-lh-heading);
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--lum-space-4);
+}
+
+.lum-display { font-size: var(--lum-fs-display); line-height: var(--lum-lh-display); font-weight: 800; }
+h1 { font-size: var(--lum-fs-h1); }
+h2 { font-size: var(--lum-fs-h2); }
+h3 { font-size: var(--lum-fs-h3); }
+h4 { font-size: var(--lum-fs-h4); font-weight: var(--lum-fw-semibold); }
+
+/* Eyebrow — small gold label that sits above purple headings */
+.lum-eyebrow {
+  display: inline-block;
+  font-family: var(--lum-font-body);
+  font-size: var(--lum-fs-eyebrow);
+  font-weight: var(--lum-fw-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lum-gold);
+  margin-bottom: var(--lum-space-3);
+}
+
+p { margin: 0 0 var(--lum-space-4); color: var(--lum-text); }
+.lum-muted { color: var(--lum-muted); }
+.lum-small { font-size: var(--lum-fs-small); }
+.lum-caption { font-size: var(--lum-fs-caption); color: var(--lum-muted); }
+
+a {
+  color: var(--lum-purple);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--lum-dur-fast) var(--lum-ease), border-color var(--lum-dur-fast) var(--lum-ease);
+}
+a:hover { color: var(--lum-purple-deep); border-bottom-color: currentColor; }

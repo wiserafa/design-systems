@@ -1,0 +1,200 @@
+/* =============================================================
+   Luminova Labs — Colors & Typography Tokens
+   Submarca de tecnologia e IA da Escola Luminova Interlagos.
+   Dark-first: herda os hues da mãe (roxo 305 / laranja 60),
+   muda a superfície e a atitude. Glow é a assinatura.
+   ============================================================= */
+
+/* Fonts — Display: Museo Sans Rounded (herdada da mãe);
+   Body: Manrope; Mono (sotaque de laboratório): JetBrains Mono.
+   Arista Pro em fonts/ é LOGO CONSTRUCTION ONLY — não usar em UI. */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* ---------- Museo Sans Rounded (display — brand) ---------- */
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded100.otf') format('opentype');
+  font-weight: 100; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded300.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded500.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded700.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded900.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Museo Sans Rounded';
+  src: url('fonts/MuseoSansRounded1000.otf') format('opentype');
+  font-weight: 1000; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* ---------- SURFACES (dark-first) ---------- */
+  --labs-bg:            oklch(14% .02 285);   /* canvas grafite-índigo */
+  --labs-surface:       oklch(18% .02 285);   /* card base */
+  --labs-elevated:      oklch(22% .02 285);   /* card destacado */
+  --labs-border:        oklch(100% 0 0 / .10);
+  --labs-border-strong: oklch(100% 0 0 / .15);
+
+  /* ---------- TEXT ---------- */
+  --labs-fg:            oklch(98.5% .005 85); /* warm near-white */
+  --labs-fg-muted:      oklch(65% .02 285);
+
+  /* ---------- HUES (herdados da mãe, brilho ajustado p/ escuro) ---------- */
+  --labs-purple:        oklch(58% .18 305);
+  --labs-purple-light:  oklch(70% .16 305);   /* hover / hero highlight */
+  --labs-purple-deep:   oklch(48% .17 305);   /* pressed */
+  --labs-accent:        oklch(77% .16 60);    /* laranja/gold — CTA */
+  --labs-accent-deep:   oklch(68% .15 60);    /* pressed CTA */
+  --labs-accent-fg:     oklch(14% .02 285);   /* texto sobre accent */
+
+  /* ---------- SQUAD STATES (substitui segmentos escolares da mãe) ---------- */
+  --labs-state-idea:       oklch(65% .02 285);          /* neutro */
+  --labs-state-idea-soft:  oklch(100% 0 0 / .06);
+  --labs-state-build:      oklch(70% .16 305);          /* build / test — roxo */
+  --labs-state-build-soft: oklch(58% .18 305 / .18);
+  --labs-state-ship:       oklch(77% .16 60);           /* ship — laranja */
+  --labs-state-ship-soft:  oklch(77% .16 60 / .14);
+
+  /* ---------- SEMANTIC (ajustados p/ escuro) ---------- */
+  --labs-success:       oklch(72% .17 150);
+  --labs-info:          oklch(72% .14 250);
+  --labs-warn:          oklch(80% .15 85);
+  --labs-error:         oklch(68% .19 25);
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --labs-font-display: 'Museo Sans Rounded', Nunito, sans-serif; /* títulos, botões, labels */
+  --labs-font-body:    'Manrope', system-ui, -apple-system, sans-serif;
+  --labs-font-mono:    'JetBrains Mono', monospace; /* sotaque de laboratório */
+
+  /* Type scale (px) — desktop (esqueleto da mãe) */
+  --labs-fs-display: 64px;
+  --labs-fs-h1:      48px;
+  --labs-fs-h2:      36px;
+  --labs-fs-h3:      28px;
+  --labs-fs-h4:      22px;
+  --labs-fs-eyebrow: 12px;
+  --labs-fs-body:    16px;
+  --labs-fs-small:   14px;
+  --labs-fs-caption: 12px;
+  --labs-fs-mono:    13px;
+
+  /* Line heights */
+  --labs-lh-display: 1.02; /* @kind other */
+  --labs-lh-heading: 1.15; /* @kind other */
+  --labs-lh-body:    1.6;  /* @kind other */
+
+  /* Weights */
+  --labs-fw-body:    400;  /* @kind other */
+  --labs-fw-medium:  500;  /* @kind other */
+  --labs-fw-semibold:600;  /* @kind other */
+  --labs-fw-bold:    700;  /* @kind other */
+  --labs-fw-black:   900;  /* @kind other */
+
+  /* ---------- FORM / RADII ---------- */
+  --labs-radius-sm:   .375rem; /* 6px — inputs pequenos, tags */
+  --labs-radius:      .75rem;  /* 12px — botões, badges, swatches */
+  --labs-radius-lg:   1.25rem; /* 20px — cards, modais */
+  --labs-radius-pill: 999px;
+
+  /* ---------- SPACING (8px base — esqueleto da mãe) ---------- */
+  --labs-space-1:  4px;
+  --labs-space-2:  8px;
+  --labs-space-3:  12px;
+  --labs-space-4:  16px;
+  --labs-space-5:  24px;
+  --labs-space-6:  32px;
+  --labs-space-7:  48px;
+  --labs-space-8:  64px;
+  --labs-space-9:  96px;
+
+  /* ---------- SHADOW + GLOW (assinatura do Labs) ---------- */
+  --labs-shadow-card:   0 1px 2px oklch(18% .01 280 / .04), 0 8px 24px oklch(18% .01 280 / .06);
+  --labs-glow-purple:   0 0 60px oklch(58% .18 305 / .25); /* @kind shadow */
+  --labs-glow-accent:   0 0 48px oklch(77% .16 60 / .22);  /* @kind shadow */
+  --labs-focus-ring:    0 0 0 3px oklch(77% .16 60 / .4);  /* @kind shadow */
+
+  /* ---------- MOTION (esqueleto da mãe) ---------- */
+  --labs-ease:        cubic-bezier(.2, .8, .2, 1); /* @kind other */
+  --labs-dur-fast:    120ms; /* @kind other */
+  --labs-dur-normal:  220ms; /* @kind other */
+  --labs-dur-slow:    360ms; /* @kind other */
+}
+
+/* =============================================================
+   SEMANTIC ELEMENT STYLES (dark-first)
+   ============================================================= */
+
+html, body {
+  font-family: var(--labs-font-body);
+  font-size: var(--labs-fs-body);
+  line-height: var(--labs-lh-body);
+  color: var(--labs-fg);
+  background: var(--labs-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .labs-display {
+  font-family: var(--labs-font-display);
+  font-weight: var(--labs-fw-bold);
+  color: var(--labs-fg);
+  line-height: var(--labs-lh-heading);
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--labs-space-4);
+}
+
+.labs-display { font-size: var(--labs-fs-display); line-height: var(--labs-lh-display); font-weight: var(--labs-fw-black); letter-spacing: -0.02em; }
+h1 { font-size: var(--labs-fs-h1); font-weight: var(--labs-fw-black); }
+h2 { font-size: var(--labs-fs-h2); }
+h3 { font-size: var(--labs-fs-h3); }
+h4 { font-size: var(--labs-fs-h4); font-weight: var(--labs-fw-semibold); }
+
+/* Highlight dentro de headline — roxo brilhante (não o roxo profundo da mãe) */
+.labs-hl { color: var(--labs-purple-light); }
+
+/* Eyebrow — mono, uppercase, accent. Na mãe era Manrope/laranja; aqui é o sotaque de laboratório */
+.labs-eyebrow {
+  display: inline-block;
+  font-family: var(--labs-font-mono);
+  font-size: var(--labs-fs-eyebrow);
+  font-weight: var(--labs-fw-medium);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--labs-accent);
+  margin-bottom: var(--labs-space-3);
+}
+
+/* Mono de laboratório — IDs, estados, numerais de etapa. Nunca em texto pra fora. */
+.labs-mono {
+  font-family: var(--labs-font-mono);
+  font-size: var(--labs-fs-mono);
+  font-weight: var(--labs-fw-medium);
+}
+
+p { margin: 0 0 var(--labs-space-4); color: var(--labs-fg); }
+.labs-muted { color: var(--labs-fg-muted); }
+.labs-small { font-size: var(--labs-fs-small); }
+.labs-caption { font-size: var(--labs-fs-caption); color: var(--labs-fg-muted); }
+
+a {
+  color: var(--labs-purple-light);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--labs-dur-fast) var(--labs-ease), border-color var(--labs-dur-fast) var(--labs-ease);
+}
+a:hover { color: var(--labs-accent); border-bottom-color: currentColor; }

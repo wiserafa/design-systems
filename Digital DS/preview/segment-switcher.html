@@ -1,0 +1,24 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Segment switcher" subtitle="Pill track + thumb por segmento" viewport="700x260" -->
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+.seg { display: inline-flex; padding: 4px; background: var(--lum-purple-soft); border-radius: 999px; gap: 4px; }
+.seg button { font-family: var(--lum-font-body); font-weight: 600; font-size: 13px; padding: 8px 16px; border: none; background: transparent; color: var(--lum-purple); border-radius: 999px; cursor: pointer; }
+.seg button.on { color: #fff; }
+.seg.fund1 button.on { background: #02A9B9; }
+.seg.fund2 button.on { background: #FF9933; }
+.seg.medio button.on { background: #662483; }
+.seg.prof  button.on { background: #003366; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div style="display:flex;flex-direction:column;gap:14px;justify-content:center;align-items:flex-start;height:100%;">
+    <div class="seg fund1"><button class="on">Fund 1</button><button>Fund 2</button><button>Médio</button><button>Profs</button></div>
+    <div class="seg fund2"><button>Fund 1</button><button class="on">Fund 2</button><button>Médio</button><button>Profs</button></div>
+    <div class="seg medio"><button>Fund 1</button><button>Fund 2</button><button class="on">Médio</button><button>Profs</button></div>
+    <div class="seg prof"><button>Fund 1</button><button>Fund 2</button><button>Médio</button><button class="on">Profs</button></div>
+    <div style="font-size:11px;color:var(--lum-muted);">Switcher de segmento — track roxo-suave, thumb na cor do segmento.</div>
+  </div>
+</div>
+</body></html>

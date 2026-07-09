@@ -1,0 +1,307 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/brand/**",
+              "components/core/**",
+              "components/slide/**",
+              "ui_kits/slides/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Arista Pro Alternate|Museo Sans Rounded))/i]",
+        "message": "Font not provided by the design system. Available: Arista Pro Alternate, Museo Sans Rounded."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|children|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: tone, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|children|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HighlightBox'] > JSXAttribute > JSXIdentifier[name!=/^(?:color|size|as|lines|children|key|ref|className|style|children)$/]",
+        "message": "<HighlightBox> doesn't accept that prop. Declared props: color, size, as, lines, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logo'] > JSXAttribute > JSXIdentifier[name!=/^(?:height|plate|src|alt|key|ref|className|style|children)$/]",
+        "message": "<Logo> doesn't accept that prop. Declared props: height, plate, src, alt."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Program'] > JSXAttribute > JSXIdentifier[name!=/^(?:id|label|color|fg|key|ref|className|style|children)$/]",
+        "message": "<Program> doesn't accept that prop. Declared props: id, label, color, fg."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='QuoteBlock'] > JSXAttribute > JSXIdentifier[name!=/^(?:color|size|inverse|children|key|ref|className|style|children)$/]",
+        "message": "<QuoteBlock> doesn't accept that prop. Declared props: color, size, inverse, children."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Badge": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "HighlightBox": {
+        "replaces": []
+      },
+      "Logo": {
+        "replaces": []
+      },
+      "Program": {
+        "replaces": []
+      },
+      "QuoteBlock": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--bg-inverse",
+      "--bg-page",
+      "--black",
+      "--border-strong",
+      "--border-subtle",
+      "--border-width",
+      "--brand-accent",
+      "--brand-primary",
+      "--brand-secondary",
+      "--dur-base",
+      "--dur-fast",
+      "--dur-slow",
+      "--ease-in-out",
+      "--ease-out",
+      "--font-body",
+      "--font-display",
+      "--font-numeric",
+      "--font-rounded",
+      "--gradient-brand",
+      "--grey-050",
+      "--grey-100",
+      "--grey-200",
+      "--grey-400",
+      "--grey-500",
+      "--grey-700",
+      "--highlight-fill",
+      "--highlight-text",
+      "--leading-normal",
+      "--leading-relaxed",
+      "--leading-snug",
+      "--leading-tight",
+      "--lime-500",
+      "--navy-700",
+      "--orange-400",
+      "--orange-500",
+      "--orange-600",
+      "--plum-800",
+      "--plum-900",
+      "--program-az",
+      "--program-ciencias",
+      "--program-educacross",
+      "--program-financeira",
+      "--program-macmillan",
+      "--program-projetos",
+      "--program-regua",
+      "--purple-600",
+      "--purple-700",
+      "--purple-800",
+      "--radius-circle",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--radius-xl",
+      "--rule-width",
+      "--shadow-brand",
+      "--shadow-lg",
+      "--shadow-md",
+      "--shadow-sm",
+      "--slide-h",
+      "--slide-w",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--surface-card",
+      "--surface-muted",
+      "--teal-600",
+      "--text-body",
+      "--text-body-lg",
+      "--text-caption",
+      "--text-display",
+      "--text-h1",
+      "--text-h2",
+      "--text-h3",
+      "--text-heading",
+      "--text-inverse",
+      "--text-label",
+      "--text-lead",
+      "--text-muted",
+      "--text-on-brand",
+      "--text-small",
+      "--text-title",
+      "--tracking-label",
+      "--tracking-normal",
+      "--tracking-tight",
+      "--weight-bold",
+      "--weight-extrabold",
+      "--weight-medium",
+      "--weight-regular",
+      "--weight-semibold",
+      "--white",
+      "--yellow-400",
+      "--yellow-500"
+    ],
+    "tokenKinds": {
+      "--orange-500": "color",
+      "--orange-400": "color",
+      "--orange-600": "color",
+      "--yellow-500": "color",
+      "--yellow-400": "color",
+      "--purple-700": "color",
+      "--purple-600": "color",
+      "--purple-800": "color",
+      "--plum-900": "color",
+      "--plum-800": "color",
+      "--lime-500": "color",
+      "--navy-700": "color",
+      "--teal-600": "color",
+      "--white": "color",
+      "--grey-050": "color",
+      "--grey-100": "color",
+      "--grey-200": "color",
+      "--grey-400": "color",
+      "--grey-500": "color",
+      "--grey-700": "color",
+      "--black": "color",
+      "--brand-primary": "color",
+      "--brand-secondary": "color",
+      "--brand-accent": "color",
+      "--bg-page": "color",
+      "--bg-inverse": "color",
+      "--surface-card": "color",
+      "--surface-muted": "color",
+      "--text-body": "font",
+      "--text-heading": "font",
+      "--text-inverse": "font",
+      "--text-muted": "font",
+      "--text-on-brand": "font",
+      "--border-subtle": "color",
+      "--border-strong": "color",
+      "--highlight-fill": "color",
+      "--highlight-text": "font",
+      "--gradient-brand": "color",
+      "--program-az": "color",
+      "--program-macmillan": "color",
+      "--program-educacross": "color",
+      "--program-financeira": "color",
+      "--program-regua": "color",
+      "--program-ciencias": "color",
+      "--program-projetos": "color",
+      "--font-display": "font",
+      "--font-rounded": "radius",
+      "--font-body": "font",
+      "--font-numeric": "font",
+      "--weight-regular": "font",
+      "--weight-medium": "font",
+      "--weight-semibold": "font",
+      "--weight-bold": "font",
+      "--weight-extrabold": "font",
+      "--text-display": "font",
+      "--text-h1": "font",
+      "--text-h2": "font",
+      "--text-h3": "font",
+      "--text-title": "font",
+      "--text-lead": "font",
+      "--text-body-lg": "font",
+      "--text-small": "font",
+      "--text-caption": "font",
+      "--text-label": "font",
+      "--leading-tight": "font",
+      "--leading-snug": "font",
+      "--leading-normal": "font",
+      "--leading-relaxed": "font",
+      "--tracking-label": "font",
+      "--tracking-tight": "font",
+      "--tracking-normal": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-xl": "radius",
+      "--radius-pill": "radius",
+      "--radius-circle": "radius",
+      "--shadow-sm": "shadow",
+      "--shadow-md": "shadow",
+      "--shadow-lg": "shadow",
+      "--shadow-brand": "shadow",
+      "--border-width": "spacing",
+      "--rule-width": "spacing",
+      "--ease-out": "other",
+      "--ease-in-out": "other",
+      "--dur-fast": "other",
+      "--dur-base": "other",
+      "--dur-slow": "other",
+      "--slide-w": "spacing",
+      "--slide-h": "spacing"
+    },
+    "fontFamilies": [
+      "Arista Pro Alternate",
+      "Museo Sans Rounded"
+    ]
+  }
+}

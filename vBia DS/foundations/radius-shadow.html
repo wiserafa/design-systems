@@ -1,0 +1,18 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Radius & shadow" subtitle="Rounded corners and soft shadows" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--grey-050)}
+  .wrap{padding:26px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+  .box{width:88px;height:64px;background:var(--white);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;font-family:var(--font-numeric);font-size:11px;color:var(--text-muted)}
+</style></head>
+<body>
+<div class="wrap">
+  <div class="box" style="border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)">sm 6</div>
+  <div class="box" style="border-radius:var(--radius-md);box-shadow:var(--shadow-md)">md 12</div>
+  <div class="box" style="border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)">lg 20</div>
+  <div class="box" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-brand)">xl 32</div>
+  <div class="box" style="border-radius:var(--radius-pill);box-shadow:var(--shadow-md);width:120px">pill</div>
+</div>
+</body></html>

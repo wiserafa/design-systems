@@ -1,0 +1,28 @@
+<!-- @dsCard group="Brand" viewport="700x300" name="Logo variants" subtitle="Transparent, on-dark, on-white, and circle mark" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--white)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:22px}
+  .cell{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;height:112px;position:relative}
+  .cell img{max-height:64px;max-width:82%;width:auto;object-fit:contain}
+  .cell.mark img{max-height:96px}
+  .checker{background:
+    linear-gradient(45deg,#eee 25%,transparent 25%),
+    linear-gradient(-45deg,#eee 25%,transparent 25%),
+    linear-gradient(45deg,transparent 75%,#eee 75%),
+    linear-gradient(-45deg,transparent 75%,#eee 75%);
+    background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0}
+  .tag{position:absolute;left:10px;bottom:8px;font-family:var(--font-body);font-size:11px;color:var(--text-muted)}
+  .dark .tag{color:rgba(255,255,255,.7)}
+  .plum{background:var(--plum-900)}
+</style></head>
+<body>
+<div class="grid">
+  <div class="cell"><img src="../assets/logo-luminova-full.png" alt="Luminova"><span class="tag">Transparente (padrão)</span></div>
+  <div class="cell dark plum"><img src="../assets/logo-luminova-horizontal.png" alt="Luminova"><span class="tag">Fundo escuro</span></div>
+  <div class="cell"><img src="../assets/logo-luminova-horizontal-white-bg.png" alt="Luminova"><span class="tag">Fundo branco</span></div>
+  <div class="cell mark checker"><img src="../assets/logo-luminova-mark.png" alt="Símbolo Luminova"><span class="tag">Símbolo (transparente)</span></div>
+</div>
+</body></html>
